@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const csv = require('csvtojson');
 const SalesData = require('./models/sales.model');
 
-const mongoURI = 'mongodb://localhost:27017/salesDB'; // your MongoDB local URL
+const mongoURI = 'mongodb://localhost:27017/salesDB';
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -18,7 +18,7 @@ async function loadData() {
         const csvFilePath = './src/sales_data.csv';
         const jsonArray = await csv().fromFile(csvFilePath);
 
-        // 🔥 Map and Fix Data properly
+        //Map and Fix Data properly
         const formattedData = jsonArray.map(item => ({
             orderId: item['Order ID'],
             productId: item['Product ID'],
