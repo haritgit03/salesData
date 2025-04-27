@@ -21,7 +21,7 @@ app.use('/api/sales', salesRoutes);
 
 // Root API
 app.get('/', (req, res) => {
-    res.send('Welcome to the Sales Data API 🚀');
+    res.send('Welcome to the Sales Data API');
 });
 
 // Server Start
